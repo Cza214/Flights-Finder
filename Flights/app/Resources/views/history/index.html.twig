@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Histories list</h1>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th>Date</th>
+                <th><a href="{{ path('flight_history_deleteall') }}" class="btn btn-warning btn-sm">Bow Everything Up</a></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for history in histories %}
+            <tr>
+                <td>{{ history.departure }}</td>
+                <td>{{ history.arrival }}</td>
+                <td>{% if history.date %}{{ history.date|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <a href="{{ path('flight_flight_flight',{'departure':history.departure,'arrival':history.arrival,'date':history.date|date('Y-m-d')})}}" class="btn btn-info btn-sm">Find</a>
+                    <a href="{{ path('flight_history_delete', {'id':history.id}) }}" class="btn btn-warning btn-sm">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

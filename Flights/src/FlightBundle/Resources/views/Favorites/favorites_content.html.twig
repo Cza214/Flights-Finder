@@ -1,0 +1,18 @@
+{% extends('base.html.twig') %}
+{% block content %}
+    <h2>Favorite Connections</h2>
+    <table class="table table-sm">
+        <tr>
+            <th>Departure</th>
+            <th>Arrivals</th>
+            <th>Options</th>
+        </tr>
+        {% for favorite in favorites %}
+            <tr>
+                <td>{{ favorite.getDeparture() }}</td>
+                <td>{{ favorite.getArrival() }}</td>
+                <td><a href="{{ path('flight_favorites_delete',{'id':favorite.id}) }}" class="btn btn-warning btn-sm">Delete</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

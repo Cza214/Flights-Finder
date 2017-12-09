@@ -1,0 +1,26 @@
+.hidden-custom {
+    display: none;
+}
+.ui-menu {
+    background-color: whitesmoke;
+    width: 1px;
+    list-style-type: none;
+    margin: 2px;
+}
+
+.ui-menu-item:hover {
+    cursor: pointer;
+    background-color: lightslategray;
+}
+
+.ui-helper-hidden-accessible {
+    display: none;
+}
+.flights:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+header {
+    background-image: url("/../pictures/background/background.png");
+}

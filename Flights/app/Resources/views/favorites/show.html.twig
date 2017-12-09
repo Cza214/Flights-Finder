@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Favorite</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ favorite.id }}</td>
+            </tr>
+            <tr>
+                <th>Departure</th>
+                <td>{{ favorite.departure }}</td>
+            </tr>
+            <tr>
+                <th>Arrival</th>
+                <td>{{ favorite.arrival }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('favorites_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

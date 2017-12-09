@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    <h1>History</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Departure</th>
+                <td>{{ history.departure }}</td>
+            </tr>
+            <tr>
+                <th>Arrival</th>
+                <td>{{ history.arrival }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{% if history.date %}{{ history.date|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('history_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

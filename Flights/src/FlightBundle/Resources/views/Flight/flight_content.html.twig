@@ -1,0 +1,33 @@
+{% extends('base.html.twig') %}
+{% block content %}
+    <div class="row">
+    <div class="col-md-7">
+    {{ include('FlightBundle:Flight:flight_head.html.twig',{'date':date}) }}
+    {% for flight in flights['departure'] %}
+            {{ include('FlightBundle:Flight:flight.html.twig',{'flight':flight}) }}
+        {% endfor %}
+
+    {% if flights['arrival'] is defined %}
+                {{ include('FlightBundle:Flight:flight_head_return.html.twig',{'date':dateBack}) }}
+        {% for flight in flights['arrival'] %}
+                {{ include('FlightBundle:Flight:flight.html.twig',{'flight':flight}) }}
+        {% endfor %}
+    {% endif %}
+    </div>
+        <div class="col-md-5" style="padding: 0px;">
+            <div class="row" id="flight_map" style="width: 100%; height: 200px; margin: 0;">
+            </div>
+            {% if is_granted('ROLE_USER') %}
+                {% if status %}
+                    <div class="row" style="width: 100%; height: auto; margin: 0;"><a style="width: 100%" href="{{ path('flight_favorites_delete',{'id':status.id}) }}" class="btn btn-warning removeFromFavorites">Remove From Favorites</a></div>
+                {% else %}
+                    <div class="row" style="width: 100%; height: auto; margin: 0;"><button style="width: 100%" class="btn btn-success addToFavorites">Add Connect to Favorites</button></div>
+                {% endif %}
+            {% endif %}
+            <div class="row" style="width: 100%; height: auto; margin: 0; padding: 10px">
+                Distance: --- km <br>
+                Flight Time: --- avg.
+            </div>
+        </div>
+    </div>
+{% endblock %}

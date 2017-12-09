@@ -1,0 +1,13 @@
+<div class="row border">
+    <div class="col text-center">
+        <span class="small">{{ flight.getDeparture() }}</span><br>{{ flight.getDepartureTime() }}
+    </div>
+    <div class="col text-center">
+        <span>{{ flight.getPrice() }} PLN</span>
+        <span class="small"><hr style="padding: 0; margin: 1px;"></span>
+        <span>{{ flight.getFlightNumber }}</span>
+    </div>
+    <div class="col text-center">
+        <span class="small">{{ flight.getArrival() }}</span><br>{{ flight.getArrivalTime() }}
+    </div>
+</div>

@@ -1,0 +1,21 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="fos_user_user_show container">
+    <div class="row">
+        <div class="col-md-4" style="padding: 0;">
+            <div class="row">
+                <div class="col ml-auto text-left">
+                    <p class="small">{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+                    <p class="small">{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8" style="padding: 0;">
+            <p>
+                <a href="{{ path('history_index') }}" class="btn btn-info">Browsking History</a>
+                <a href="{{ path('flight_favorites_show') }}" class="btn btn-secondary">Favorites</a>
+                <a href="{{ path('fos_user_profile_edit') }}" class="btn btn-secondary">Edit Profile</a>
+            </p>
+        </div>
+    </div>
+</div>
